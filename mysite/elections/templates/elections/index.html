@@ -11,12 +11,18 @@
     <meta name="author" content="">
 
     <title>Agency - Start Bootstrap Theme</title>
-
-
+    <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <!-- or -->
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- Bootstrap core CSS -->
     <link href='{% static "vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
 
     <!-- Custom fonts for this template -->
+
+
+
     <link href='{% static "vendor/font-awesome/css/font-awesome.min.css" %}' rel="stylesheet" type="text/css">
     <link href='{% static "https://fonts.googleapis.com/css?family=Montserrat:400,700" %}' rel="stylesheet" type="text/css">
     <link href='{% static "https://fonts.googleapis.com/css?family=Kaushan+Script" %}' rel='stylesheet' type='text/css'>
@@ -25,7 +31,28 @@
 
     <!-- Custom styles for this template -->
     <link href='{% static "css/agency.min.css" %}' rel="stylesheet">
-
+    <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $("#popbutton").click(function(){
+            $('div.modal').modal({remote : 'layer.html'});
+        })
+    })
+    </script>
+      <!--<link rel="stylesheet" type="text/css" href="mystyle.css">-->
+    <style>
+    .modal-dialog.modal-fullsize {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .modal-content.modal-fullsize {
+      height: auto;
+      min-height: 100%;
+      border-radius: 0;
+    }
+    </style>
   </head>
 
   <body id="page-top">
@@ -43,9 +70,9 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
+            <!--<li class="nav-item">-->
+              <!--<a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>-->
+            <!--</li>-->
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
@@ -64,10 +91,39 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-lead-in">based on Natural Language Processing</div>'
+          <div class="animated fadeInDown intro-lead-in ">based on Natural Language Processing<br/>Summary Services</div>
           <!--중간 text 부분~~~~~~~~~~~~~~~-->
           <div class="intro-heading text-uppercase"></div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#my80sizeModal">
+            <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#my80sizeModal">-->
+              SummeryStart
+            </button>
+
+            <!-- 80% size Modal -->
+            <div class="modal fade" id="my80sizeModal" tabindex="-1" role="dialog" aria-labelledby="my80sizeModalLabel">
+
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content modal-80size">
+
+                  <div class="modal-header">
+                    <button type="button" class="btn btn-link"><h4>요약할 자소서를 입력하세요.</h4></button>
+                  </div>
+                  <div class="modal-header">
+
+                    <textarea class="form-control" rows="10" placeholder="자소서 입력을 기다립니다."></textarea>
+                  </div>
+
+                  <div class="modal-body">
+                    <textarea class="form-control" rows="5" placeholder="요약하기 클릭시 요약이 출력됩니다."></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success">요약하기</button>
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </header>
@@ -78,135 +134,137 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted">"지원자에게는 공정한 기회를<br/> 인사팀에겐 저녁이 있는 삶을"</h3>
           </div>
         </div>
         <div class="row text-center">
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-bar-chart fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">E-Commerce</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 class="service-heading">Big Data</br></h4>
+            <p class="text-muted">축적된 자기소개서 데이터를 활용하여 </br>
+              Natural Language Processing 기반의 </br>
+            자소서 분석 서비스 제공 </p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-id-card fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">Responsive Design</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 class="service-heading">Deep Learning</h4>
+            <p class="text-muted"><br/>딥러닝 기반의 알고리즘을 통하여 우수인재의 패턴을 분석합니다. </p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-check-square-o fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">Web Security</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 class="service-heading">Natural Language</br> Processing</h4>
+            <p class="text-muted">전문화된 언어처리 기법을 사용하여 채용과정에 insight를 제공합니다.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio Grid -->
-    <section class="bg-light" id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Portfolio</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src='{% static "img/portfolio/01-thumbnail.jpg" %}' alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Threads</h4>
-              <p class="text-muted">Illustration</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src='{% static "img/portfolio/02-thumbnail.jpg" %}' alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Explore</h4>
-              <p class="text-muted">Graphic Design</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src='{% static "img/portfolio/03-thumbnail.jpg"%}' alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Finish</h4>
-              <p class="text-muted">Identity</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src='{% static "img/portfolio/04-thumbnail.jpg" %}' alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Lines</h4>
-              <p class="text-muted">Branding</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src='{% static "img/portfolio/05-thumbnail.jpg" %}' alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Southwest</h4>
-              <p class="text-muted">Website Design</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src='{% static "img/portfolio/06-thumbnail.jpg" %}' alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Window</h4>
-              <p class="text-muted">Photography</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!--&lt;!&ndash; Portfolio Grid &ndash;&gt;-->
+    <!--<section class="bg-light" id="portfolio">-->
+      <!--<div class="container">-->
+        <!--<div class="row">-->
+          <!--<div class="col-lg-12 text-center">-->
+            <!--<h2 class="section-heading text-uppercase">Portfolio</h2>-->
+            <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+          <!--<div class="col-md-4 col-sm-6 portfolio-item">-->
+            <!--<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">-->
+              <!--<div class="portfolio-hover">-->
+                <!--<div class="portfolio-hover-content">-->
+                  <!--<i class="fa fa-plus fa-3x"></i>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<img class="img-fluid" src='{% static "img/portfolio/01-thumbnail.jpg" %}' alt="">-->
+            <!--</a>-->
+            <!--<div class="portfolio-caption">-->
+              <!--<h4>Threads</h4>-->
+              <!--<p class="text-muted">Illustration</p>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col-md-4 col-sm-6 portfolio-item">-->
+            <!--<a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">-->
+              <!--<div class="portfolio-hover">-->
+                <!--<div class="portfolio-hover-content">-->
+                  <!--<i class="fa fa-plus fa-3x"></i>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<img class="img-fluid" src='{% static "img/portfolio/02-thumbnail.jpg" %}' alt="">-->
+            <!--</a>-->
+            <!--<div class="portfolio-caption">-->
+              <!--<h4>Explore</h4>-->
+              <!--<p class="text-muted">Graphic Design</p>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col-md-4 col-sm-6 portfolio-item">-->
+            <!--<a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">-->
+              <!--<div class="portfolio-hover">-->
+                <!--<div class="portfolio-hover-content">-->
+                  <!--<i class="fa fa-plus fa-3x"></i>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<img class="img-fluid" src='{% static "img/portfolio/03-thumbnail.jpg"%}' alt="">-->
+            <!--</a>-->
+            <!--<div class="portfolio-caption">-->
+              <!--<h4>Finish</h4>-->
+              <!--<p class="text-muted">Identity</p>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col-md-4 col-sm-6 portfolio-item">-->
+            <!--<a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">-->
+              <!--<div class="portfolio-hover">-->
+                <!--<div class="portfolio-hover-content">-->
+                  <!--<i class="fa fa-plus fa-3x"></i>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<img class="img-fluid" src='{% static "img/portfolio/04-thumbnail.jpg" %}' alt="">-->
+            <!--</a>-->
+            <!--<div class="portfolio-caption">-->
+              <!--<h4>Lines</h4>-->
+              <!--<p class="text-muted">Branding</p>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col-md-4 col-sm-6 portfolio-item">-->
+            <!--<a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">-->
+              <!--<div class="portfolio-hover">-->
+                <!--<div class="portfolio-hover-content">-->
+                  <!--<i class="fa fa-plus fa-3x"></i>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<img class="img-fluid" src='{% static "img/portfolio/05-thumbnail.jpg" %}' alt="">-->
+            <!--</a>-->
+            <!--<div class="portfolio-caption">-->
+              <!--<h4>Southwest</h4>-->
+              <!--<p class="text-muted">Website Design</p>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="col-md-4 col-sm-6 portfolio-item">-->
+            <!--<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">-->
+              <!--<div class="portfolio-hover">-->
+                <!--<div class="portfolio-hover-content">-->
+                  <!--<i class="fa fa-plus fa-3x"></i>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<img class="img-fluid" src='{% static "img/portfolio/06-thumbnail.jpg" %}' alt="">-->
+            <!--</a>-->
+            <!--<div class="portfolio-caption">-->
+              <!--<h4>Window</h4>-->
+              <!--<p class="text-muted">Photography</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</section>-->
 
     <!-- About -->
     <section id="about">
@@ -214,7 +272,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted"></h3>
           </div>
         </div>
         <div class="row">
@@ -226,11 +284,13 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>2009-2011</h4>
-                    <h4 class="subheading">Our Humble Beginnings</h4>
+                    <h4>2018-1-11 ~ 14</h4>
+                    <h4 class="subheading">Project Start</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">- 주제 관련 자료 수집 및 논문 탐색<br/>
+                    - 프로젝트 관련 ML,DL,NL 연구 <br/>
+                    - 일정 계획 및 선행연구 토의</p>
                   </div>
                 </div>
               </li>
@@ -240,11 +300,14 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>March 2011</h4>
-                    <h4 class="subheading">An Agency is Born</h4>
+                    <h4>2018-1-14 ~ 26</h4>
+                    <h4 class="subheading">Deep Learning & NL</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">- RNN, LSTM 선행연구 진행<br/>
+                    - 기존 LSTM 알고리즘 분석 <br/>
+                    - 한글 적용 테스트 및 WEB & SERVER<br/>
+                     개발 언어 선정과 서비스 방향 검토</p>
                   </div>
                 </div>
               </li>
@@ -254,11 +317,16 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>December 2012</h4>
-                    <h4 class="subheading">Transition to Full Service</h4>
+                    <h4>2018-1-26 ~ 2-14</h4>
+                    <h4 class="subheading">데이터 수집과 전처리<br/>DL Model 구축</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">- 자소서 요약 알고리즘 구현 <br/>
+                    - LexRank 연구 및 고도화 <br/>
+                    - Sequence-to-Sequence (S2S) 연구<br/>
+                    - Django 기반 웹 구축<br/>
+                    - AWS ubuntu14.04 서버 구축
+                    </p>
                   </div>
                 </div>
               </li>
@@ -268,11 +336,12 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>July 2014</h4>
-                    <h4 class="subheading">Phase Two Expansion</h4>
+                    <h4>2018-02-14 ~ 02-26</h4>
+                    <h4 class="subheading">Summary Project 발표</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">LexRank 기반 자소서 요약 서비스를 구축 및 배포완료 하였습니다. 처음 접한 Python, AI, Bigdata 공부와 함께 프로젝트를 진행하느라 고생한 RANGE(5,10) 조원 분들께 감사드리며
+                    공부의 기회를 준 POSCO, 포항공대 임직원분들과 관계자분들께 깊은 감사의 말씀 드립니다.</p>
                   </div>
                 </div>
               </li>
@@ -295,15 +364,15 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted">RANGE(5,10)<br/>조원들의 나이가 25~29살로 잘 어우러져<br/>Python RANGE 함수 명을 인용함</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-4">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src='{% static "img/team/1.jpg" %}' alt="">
-              <h4>Kay Garland</h4>
-              <p class="text-muted">Lead Designer</p>
+              <h4>조형배</h4>
+              <p class="text-muted">시스템경영공학 전공<br/>LexRank 알고리즘 구축 및 총괄 책임</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
@@ -326,8 +395,8 @@
           <div class="col-sm-4">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src='{% static "img/team/2.jpg" %}' alt="">
-              <h4>Larry Parker</h4>
-              <p class="text-muted">Lead Marketer</p>
+              <h4>서찬양</h4>
+              <p class="text-muted">국제통상학 전공<br/>RNN 공동 연구 및 LexRank 알고리즘 구축<br></p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
@@ -350,8 +419,84 @@
           <div class="col-sm-4">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src='{% static "img/team/3.jpg" %}' alt="">
-              <h4>Diana Pertersen</h4>
-              <p class="text-muted">Lead Developer</p>
+              <h4>김우현</h4>
+              <p class="text-muted">기계공학 전공</br>Seq2Seq알고리즘 구축 및 LSTM 연구 </p>
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src='{% static "img/team/4.jpg" %}' alt="">
+              <h4>문철우</h4>
+              <p class="text-muted">정보시스템 전공<br>알고리즘 분석 및 웹서버 구축</p>
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src='{% static "img/team/5.jpg" %}' alt="">
+              <h4>강소영</h4>
+              <p class="text-muted">통계학 전공<br>LexRank 연구 및 Seq2seq 알고리즘 구축</p>
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src='{% static "img/team/6.jpg" %}' alt="">
+              <h4>김동석</h4>
+              <p class="text-muted">포항공대 학부 연구원<br>Team Adviser</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
@@ -374,7 +519,7 @@
         </div>
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+            <p class="large text-muted"></p>
           </div>
         </div>
       </div>
